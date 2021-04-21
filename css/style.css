@@ -20,7 +20,7 @@ table tr td {
 	width: 98%;
 	padding: 1%;
 	height: 20px;
-	border: 1px solid #999;
+	border: 1px solid rgb(0, 0, 0);
 	outline: none;
 }
 

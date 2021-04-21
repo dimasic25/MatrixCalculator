@@ -1,6 +1,6 @@
 let table_body = document.getElementsByClassName('data-table__body')[0];
 
-let table_rows = 20;
+let table_rows = 25;
 let table_columns = 20;
 
 
@@ -295,6 +295,7 @@ document.querySelector('.clear').addEventListener('click', function () {
 	let answerTableBody = document.querySelector('.answer-table__body');
 	for (let i = 0; i < inputs.length; i++) {
 		inputs[i].value = "";
+		inputs[i].style.backgroundColor = 'white';
 	}
 	if (answerTableBody) {
 		answerTableBody.remove();
