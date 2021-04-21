@@ -69,3 +69,10 @@ span {
 	font-weight: 700;
 	font-size: 20px;
 }
+
+.sep {
+	display: none;
+	margin: 10px;
+	background-color: black;
+	height: 10px;
+}
