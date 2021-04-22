@@ -70,9 +70,10 @@ span {
 	font-size: 20px;
 }
 
-.sep {
+.answer {
 	display: none;
-	margin: 10px;
-	background-color: black;
-	height: 10px;
+	margin: 30px 0 10px 30px;
+	font-size: 30px;
+	font-weight: 700;
+	color: black;
 }

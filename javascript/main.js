@@ -105,8 +105,6 @@ for (let i = 0; i < inputs.length; i++) {
 		matrix.rows = rowSecond - rowFirst + 1;
 		matrix.cols = colSecond - colFirst + 1;
 
-		//console.log(matrix.rows);
-		//console.log(matrix.cols);
 		matrix.indexFirstSelectedCell = indexFirstSelectedCell;
 		matrix.indexSecondSelectedCell = indexSecondSelectedCell;
 		matricesInfo.push(matrix);
@@ -149,7 +147,6 @@ document.querySelector('.sum').addEventListener('click', function () {
 			C[i][j] = Number(A[i][j]) + Number(B[i][j]);
 		}
 	}
-	//console.log(C);
 	printAnswer(C);
 });
 function correctSizes(A = undefined, B = undefined, action = 'none') {
@@ -332,8 +329,8 @@ function printAnswer(C) {
 	}
 	document.querySelector('.answer-table').appendChild(answerTableBody);
 
-	let separator = document.querySelector('.sep');
-	separator.style.display = 'block';
+	let answer = document.querySelector('.answer');
+	answer.style.display = 'block';
 
 	let answerInputs = document.querySelectorAll('.answer-table__body input[class="input"]');
 	for (let i = 0; i < C.length; i++) {
