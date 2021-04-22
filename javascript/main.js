@@ -104,6 +104,9 @@ for (let i = 0; i < inputs.length; i++) {
 		let matrix = new MatrixInfo();
 		matrix.rows = rowSecond - rowFirst + 1;
 		matrix.cols = colSecond - colFirst + 1;
+
+		//console.log(matrix.rows);
+		//console.log(matrix.cols);
 		matrix.indexFirstSelectedCell = indexFirstSelectedCell;
 		matrix.indexSecondSelectedCell = indexSecondSelectedCell;
 		matricesInfo.push(matrix);
@@ -146,7 +149,7 @@ document.querySelector('.sum').addEventListener('click', function () {
 			C[i][j] = Number(A[i][j]) + Number(B[i][j]);
 		}
 	}
-
+	//console.log(C);
 	printAnswer(C);
 });
 function correctSizes(A = undefined, B = undefined, action = 'none') {
@@ -155,7 +158,7 @@ function correctSizes(A = undefined, B = undefined, action = 'none') {
 		case '-':
 			if (A == undefined || B == undefined)
 				return false;
-			else if (A.length == A[0].length && B.length == B[0].length)
+			else if (A.length == B.length && A[0].length == B[0].length)
 				return true;
 			return false;
 		case '*':
@@ -313,9 +316,14 @@ function printAnswer(C) {
 	answerTableBody = document.createElement('table_body');
 	answerTableBody.className = 'answer-table__body';
 
+	let columns = C[0].length;
+	// console.log(C);
+	// console.log(C.length);
+	// console.log(columns);
 	for (let i = 0; i < C.length; i++) {
 		let tr = document.createElement('tr');
-		for (let j = 0; j < table_columns; j++) {
+
+		for (let j = 0; j < columns; j++) {
 			let td = document.createElement('td');
 			td.innerHTML = '<input type="text" class=\"input\">';
 			tr.appendChild(td);
@@ -329,8 +337,8 @@ function printAnswer(C) {
 
 	let answerInputs = document.querySelectorAll('.answer-table__body input[class="input"]');
 	for (let i = 0; i < C.length; i++) {
-		for (let j = 0; j < C[i].length; j++) {
-			answerInputs[i * table_columns + j].value = C[i][j];
+		for (let j = 0; j < columns; j++) {
+			answerInputs[i * columns + j].value = C[i][j];
 		}
 	}
 }
